@@ -2,10 +2,10 @@ package bank;
 
 import account.Account;
 import account.BasicAccount;
-import account.ContaPremium;
+import account.PremiumAccount;
 import account.PlusAccount;
 import client.Client;
-import exception.OperacaoContaException;
+import exception.AccountOperationException;
 
 public class BankFacade {
     public BasicAccount openBasicAccount(String number, Client client) {
@@ -16,11 +16,11 @@ public class BankFacade {
         return new PlusAccount(number, client);
     }
 
-    public ContaPremium openPremiumAccount(String number, Client client) {
-        return new ContaPremium(number, client);
+    public PremiumAccount openPremiumAccount(String number, Client client) {
+        return new PremiumAccount(number, client);
     }
 
-    public boolean transfer(Account origin, double value, Account target) throws OperacaoContaException {
+    public boolean transfer(Account origin, double value, Account target) throws AccountOperationException {
         return origin.transfer(value, target);
     }
 

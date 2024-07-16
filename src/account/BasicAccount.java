@@ -1,23 +1,15 @@
 package account;
 
 import client.Client;
-import creditcard.EligibleCreditCard;
 import exception.*;
-import fee.*;
-import services.*;
+import services.TaxService;
 
-public class PlusAccount extends Account implements EligibleCreditCard, AccountWithFee{
-    private int freeTransfer = 5;
-    private AdministrationFeePlus administrationFeePlus = new AdministrationFeePlus();
-    private static final double ADDITIONAL_TRANSFER_FEE = 7.50;
+public class BasicAccount extends Account {
+    private int freeTransfer = 1;
+    private static final double ADDITIONAL_TRANSFER_FEE = 15.0;
 
-    public PlusAccount(String number, Client client) {
+    public BasicAccount(String number, Client client) {
         super(number, client);
-    }
-
-    @Override
-    public void debitMonthlyRate(){
-        administrationFeePlus.debitFee(this);
     }
 
     @Override
@@ -45,10 +37,5 @@ public class PlusAccount extends Account implements EligibleCreditCard, AccountW
             throw new AccountOperationException("Erro ao realizar transferência.", e);
         }
         return false;
-    }
-
-    @Override
-    public boolean canRequestCreditCard(String cpf){
-        return ServiceScore.consultScore(cpf) >= 550;
     }
 }
