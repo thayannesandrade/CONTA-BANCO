@@ -2,9 +2,9 @@ package account;
 
 import client.Client;
 import exception.AccountOperationException;
-import transactions.Transaction;
+import transactions.ITransaction;
 
-public abstract class Account implements Transaction{
+public abstract class Account implements ITransaction{
     protected String number;
     protected double balance;
     protected Client client;

@@ -1,12 +1,12 @@
 package account;
 
 import client.Client;
-import creditcard.EligibleCreditCard;
+import creditcard.IEligibleCreditCard;
 import exception.*;
 import fee.*;
 import services.*;
 
-public class PlusAccount extends Account implements EligibleCreditCard, AccountWithFee{
+public class PlusAccount extends Account implements IEligibleCreditCard, IAccountWithFee{
     private int freeTransfer = 5;
     private AdministrationFeePlus administrationFeePlus = new AdministrationFeePlus();
     private static final double ADDITIONAL_TRANSFER_FEE = 7.50;

@@ -1,6 +1,6 @@
 package creditcard;
 
-public interface EligibleCreditCard {
+public interface IEligibleCreditCard {
     
     boolean canRequestCreditCard(String cpf);
 }

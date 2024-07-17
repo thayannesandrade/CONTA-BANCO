@@ -1,15 +1,15 @@
 package account;
 
 import client.Client;
-import creditcard.EligibleCreditCard;
+import creditcard.IEligibleCreditCard;
 import exception.AccountOperationException;
 import exception.InsufficientFundsException;
 import exception.TransferException;
 import fee.AdministrationFeePremium;
-import fee.AccountWithFee;
+import fee.IAccountWithFee;
 
 
-public class PremiumAccount extends Account implements EligibleCreditCard, AccountWithFee {
+public class PremiumAccount extends Account implements IEligibleCreditCard, IAccountWithFee {
     private AdministrationFeePremium administrationFeePremium = new AdministrationFeePremium();
 
     public PremiumAccount(String number, Client client) {

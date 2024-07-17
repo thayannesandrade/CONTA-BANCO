@@ -1,6 +1,5 @@
 package fee;
 
-public interface AccountWithFee {
+public interface IAccountWithFee {
     void debitMonthlyRate();
-    
 }

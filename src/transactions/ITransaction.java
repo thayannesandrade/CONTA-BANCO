@@ -3,7 +3,7 @@ package transactions;
 import account.Account;
 import exception.*;
 
-public interface Transaction {
+public interface ITransaction {
 
     boolean pix(double value, Account account) throws AccountOperationException;
 
